@@ -1,6 +1,6 @@
 package quiz2;
 
-import java.util.Scanner;
+import java.util.*;
 
 public class quiz2 {
 
@@ -8,8 +8,7 @@ public class quiz2 {
 
 		int a;
 		String b;
-		b="a";
-		
+		b = "a";
 
 		Scanner sc = new Scanner(System.in);
 		Scanner sc2 = new Scanner(System.in);
@@ -44,10 +43,10 @@ public class quiz2 {
 
 			}
 			System.out.println("더하려면 d 그만하려면 y");
-		
-		} 
-		
-		while (!sc2.nextLine().equals("y"));
+			b = sc2.nextLine();
+		}
+
+		while (!b.equals("y"));
 		System.out.println();
 		System.out.println("프로그램 종료");
 	}
