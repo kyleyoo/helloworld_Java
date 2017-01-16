@@ -48,7 +48,7 @@ public class Quiz2 {
 
 		while (!b.equals("y"));
 		System.out.println();
-		System.out.println("프로그램 종료");
+		System.out.println("프로그램 종료"); 
 	}
 
 }
