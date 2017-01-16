@@ -2,7 +2,7 @@ package quiz2;
 
 import java.util.*;
 
-public class quiz2 {
+public class Quiz2 {
 
 	public static void main(String[] args) {
 
