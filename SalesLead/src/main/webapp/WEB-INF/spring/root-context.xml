@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.1.xsd">
+	
+	<!-- Root Context: defines shared resources visible to all other web components -->
+<bean class="com.blog.gogohs1234.persistence.TimeDAO">
+    <property name="ds" ref="dataSource"></property>
+    </bean>
+
+	<!-- 	<bean id="str" class="java.lang.String">
+<constructor-arg value="korea"></constructor-arg>
+</bean> -->
+		<bean class="com.blog.gogohs1234.KoreanService">
+</bean>	
+<!-- <bean id="str" class="java.lang.String">
+<constructor-arg value="서울"></constructor-arg>
+</bean> -->
+<bean id="name" class="java.lang.String">
+<constructor-arg value="평양"></constructor-arg>
+</bean>
+<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+<property name="driverClassName" value="com.mysql.jdbc.Driver"></property>
+<property name="url" value="jdbc:mysql://127.0.0.1:3306/sales_lead"></property>
+      <property name="username" value="kyle"></property>
+      <property name="password" value="test"></property>
+</bean>
+
+		
+</beans>
