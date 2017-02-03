@@ -9,7 +9,9 @@
 <bean class="com.blog.gogohs1234.persistence.TimeDAO">
     <property name="ds" ref="dataSource"></property>
     </bean>
-
+	<bean class="org.mybatis.spring.SqlSessionFactoryBean" id="sqlSessionFactory">
+		<property name="dataSource" ref="dataSource" />
+	</bean>
 	<!-- 	<bean id="str" class="java.lang.String">
 <constructor-arg value="korea"></constructor-arg>
 </bean> -->
