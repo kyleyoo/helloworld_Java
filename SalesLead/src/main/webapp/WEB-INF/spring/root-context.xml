@@ -2,14 +2,30 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xmlns:context="http://www.springframework.org/schema/context"
-	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
-		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.1.xsd">
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:mybatis-spring="http://mybatis.org/schema/mybatis-spring"
+	xsi:schemaLocation="http://mybatis.org/schema/mybatis-spring http://mybatis.org/schema/mybatis-spring-1.2.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.1.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.1.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.1.xsd">
 	
 	<!-- Root Context: defines shared resources visible to all other web components -->
 <bean class="com.blog.gogohs1234.persistence.TimeDAO">
     <property name="ds" ref="dataSource"></property>
     </bean>
-
+<bean class="com.blog.gogohs1234.persistence.InfoDAO">
+	<property name="session" ref="sqlSession"></property>
+</bean>
+	<bean class="org.mybatis.spring.SqlSessionFactoryBean" id="sqlSessionFactory">
+		<property value="classpath:mybatis-config.xml" name="configLocation" />
+		<property name="dataSource" ref="dataSource" />
+		<property name="mapperLocations" value="classpath:mappers/**/*Mapper.xml"></property>
+	</bean>
+<bean id="sqlSession" class="org.mybatis.spring.SqlSessionTemplate">
+	<constructor-arg index="0" ref="sqlSessionFactory"></constructor-arg>
+</bean>
 	<!-- 	<bean id="str" class="java.lang.String">
 <constructor-arg value="korea"></constructor-arg>
 </bean> -->
@@ -24,7 +40,7 @@
 <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
 <property name="driverClassName" value="com.mysql.jdbc.Driver"></property>
 <property name="url" value="jdbc:mysql://127.0.0.1:3306/sales_lead"></property>
-      <property name="username" value="kyle"></property>
+      <property name="username" value="root"></property>
       <property name="password" value="test"></property>
 </bean>
 
