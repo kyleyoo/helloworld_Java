@@ -2,10 +2,14 @@
 <!DOCTYPE mapper
 	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.blog.gogohs1234.persistence.mapper.infoMapper">
+<mapper namespace="com.blog.gogohs1234.mapper.InfoMapper">
 
 
-<insert id="insertInfo">
-	insert into tbl_info(part,name) values(#{part},#{name})
+<insert id="insertInfo" parameterType="com.blog.gogohs1234.domain.InfoVO">
+	insert into tbl_info(part,name) values 
+	(#{part} , #{name})
+	
 </insert>
+<select id="selectAll" resultType="com.blog.gogohs1234.domain.InfoVO">
+select*from tbl_info</select>
 </mapper>

@@ -21,7 +21,7 @@
 	<bean class="org.mybatis.spring.SqlSessionFactoryBean" id="sqlSessionFactory">
 		<property value="classpath:mybatis-config.xml" name="configLocation" />
 		<property name="dataSource" ref="dataSource" />
-		<property name="mapperLocations" value="classpath:mappers/**/*Mapper.xml"></property>
+		<property name="mapperLocations" value="classpath:mappers/**/*.xml"></property>
 	</bean>
 <bean id="sqlSession" class="org.mybatis.spring.SqlSessionTemplate">
 	<constructor-arg index="0" ref="sqlSessionFactory"></constructor-arg>
@@ -29,7 +29,7 @@
 	<!-- 	<bean id="str" class="java.lang.String">
 <constructor-arg value="korea"></constructor-arg>
 </bean> -->
-		<bean class="com.blog.gogohs1234.KoreanService">
+		<bean class="com.blog.gogohs1234.controller.KoreanService">
 </bean>	
 <!-- <bean id="str" class="java.lang.String">
 <constructor-arg value="서울"></constructor-arg>
@@ -38,7 +38,7 @@
 <constructor-arg value="평양"></constructor-arg>
 </bean>
 <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
-<property name="driverClassName" value="com.mysql.jdbc.Driver"></property>
+<property name="driverClassName" value="net.sf.log4jdbc.sql.jdbcapi.DriverSpy"></property>
 <property name="url" value="jdbc:mysql://127.0.0.1:3306/sales_lead"></property>
       <property name="username" value="root"></property>
       <property name="password" value="test"></property>

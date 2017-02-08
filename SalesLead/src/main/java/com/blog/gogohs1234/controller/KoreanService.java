@@ -1,4 +1,4 @@
-package com.blog.gogohs1234;
+package com.blog.gogohs1234.controller;
 
 import javax.inject.Inject;
 

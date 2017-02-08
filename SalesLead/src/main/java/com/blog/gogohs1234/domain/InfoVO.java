@@ -1,7 +1,8 @@
 package com.blog.gogohs1234.domain;
 
 public class InfoVO {
-	private String part, name;
+	private String part;
+	private String name;
 	private int no;
 	public String getPart() {
 		return part;
@@ -20,6 +21,10 @@ public class InfoVO {
 	}
 	public void setNo(int no) {
 		this.no = no;
+	}
+	@Override
+	public String toString() {
+		return "InfoVO [part=" + part + ", name=" + name + ", no=" + no + "]";
 	}
 	
 }
