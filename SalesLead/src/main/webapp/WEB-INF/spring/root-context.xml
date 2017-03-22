@@ -31,15 +31,15 @@
 </bean> -->
 		<bean class="com.blog.gogohs1234.controller.KoreanService">
 </bean>	
-<!-- <bean id="str" class="java.lang.String">
+<bean id="str" class="java.lang.String">
 <constructor-arg value="서울"></constructor-arg>
-</bean> -->
+</bean>
 <bean id="name" class="java.lang.String">
 <constructor-arg value="평양"></constructor-arg>
 </bean>
 <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
-<property name="driverClassName" value="net.sf.log4jdbc.sql.jdbcapi.DriverSpy"></property>
-<property name="url" value="jdbc:mysql://127.0.0.1:3306/sales_lead"></property>
+<property name="driverClassName" value="com.mysql.jdbc.Driver"></property>
+<property name="url" value="jdbc:mysql://127.0.0.1:3306/security"></property>
       <property name="username" value="root"></property>
       <property name="password" value="test"></property>
 </bean>
